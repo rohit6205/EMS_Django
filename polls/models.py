@@ -7,6 +7,8 @@ class Question(models.Model):
     status = models.CharField(default='inactive', max_length=10)
     created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE) 
 
+    start_date = models.DateTimeField(null=True, blank=True)
+    end_date = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -23,6 +25,3 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.text
-
-
-class 
